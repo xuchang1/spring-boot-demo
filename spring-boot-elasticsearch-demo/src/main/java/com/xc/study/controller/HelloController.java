@@ -24,4 +24,9 @@ public class HelloController {
     public List<KeyCount> say1() {
         return helloService.say1();
     }
+
+	@GetMapping("index")
+	public String index(String id) {
+		return id;
+	}
 }
