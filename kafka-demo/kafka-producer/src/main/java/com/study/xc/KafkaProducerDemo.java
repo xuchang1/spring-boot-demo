@@ -26,17 +26,19 @@ public class KafkaProducerDemo {
         // 生产者客户端
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
-        // 消息
+        // 消息（创建消息时，可以指定消息的topic、partition）
         ProducerRecord<String, String> record = new ProducerRecord<>(topic, "Hello, kafka!");
 
         // 同步发送消息
-        try {
-            Future<RecordMetadata> future = producer.send(record);
-            RecordMetadata recordMetadata = future.get();
-            System.out.println("同步消息发送成功 : " + recordMetadata.offset() + "," + recordMetadata.partition());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+	    for (int i = 0; i < 100; i++) {
+		    try {
+			    Future<RecordMetadata> future = producer.send(record);
+			    RecordMetadata recordMetadata = future.get();
+			    System.out.println("同步消息发送成功 : " + recordMetadata.offset() + "," + recordMetadata.partition());
+		    } catch (Exception e) {
+			    e.printStackTrace();
+		    }
+	    }
 
         // 异步发送消息
         producer.send(record, (metadata, exception) -> {
