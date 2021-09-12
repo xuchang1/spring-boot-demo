@@ -25,7 +25,7 @@ public class ConsumerOffsetDemo2 {
 	// 消费者组名称
 	private static final String groupId = "offsetdemo";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Properties properties = new Properties();
 		properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
 		properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
@@ -41,17 +41,12 @@ public class ConsumerOffsetDemo2 {
 		while (true) {
 			ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(10000));
 			if (!records.isEmpty()) {
-				List<ConsumerRecord<String, String>> consumerRecordList = records.records(topicPartition);
-				long lastCommittedOffset = consumerRecordList.get(consumerRecordList.size() - 1).offset();
-				// 提交的offset为已消费消息offset+1,等于下一次待拉取的offset
-				consumer.commitSync();
-
-				System.out.println("消费的最后一个消息的offset : " + lastCommittedOffset);
+				List<ConsumerRecord<String, String>> recordList = records.records(topicPartition);
+				System.out.println("拉取的消息偏移量 : " + recordList.get(recordList.size() - 1).offset());
 				Map<TopicPartition, OffsetAndMetadata> committed = consumer.committed(Collections.singleton(topicPartition));
-				System.out.println("已提交的offset : " + committed.get(topicPartition).offset());
-				System.out.println("下一次待拉取的消息offset : " + consumer.position(topicPartition));
+				System.out.println("提交的位移 : " + committed.get(topicPartition).offset());
+				System.out.println("下一次待拉取的位移 : " + consumer.position(topicPartition));
 			}
-			System.out.println("消费结束！");
 		}
 	}
 }

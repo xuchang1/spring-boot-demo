@@ -13,7 +13,7 @@ public class KafkaProducerDemo {
     // broker集合
     private static final String brokerList = "localhost:9092";
     // 主题名称
-    private static final String topic = "topic-demo";
+    private static final String topic = "offset-demo";
 
     public static void main(String[] args) throws InterruptedException {
         Properties properties = new Properties();
