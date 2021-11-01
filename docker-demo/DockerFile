@@ -1,0 +1,9 @@
+FROM  java:8
+# 作者信息
+MAINTAINER xc
+VOLUME  /tmp
+# jar包路径
+ADD  /target/docker-demo-1.0-SNAPSHOT.jar app.jar
+RUN  bash -c 'touch /app.jar'
+# 启动命令
+ENTRYPOINT  ["java","-jar","app.jar"]
