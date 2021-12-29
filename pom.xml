@@ -7,6 +7,8 @@
     <modules>
         <module>spring-boot-elasticsearch-demo</module>
         <module>kafka-demo</module>
+        <module>docker-demo</module>
+        <module>spring-redis-demo</module>
         <module>shiro-demo</module>
     </modules>
 
