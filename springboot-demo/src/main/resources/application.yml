@@ -1,0 +1,7 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+ratelimiter:
+  limit-map: {"[/testLimit]": 1, "[/testLimit2]": 2}
+  limit-switch: true

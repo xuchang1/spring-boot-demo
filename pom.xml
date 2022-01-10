@@ -9,6 +9,7 @@
         <module>kafka-demo</module>
         <module>docker-demo</module>
         <module>spring-redis-demo</module>
+        <module>springboot-demo</module>
     </modules>
 
     <parent>
