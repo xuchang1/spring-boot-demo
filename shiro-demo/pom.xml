@@ -14,7 +14,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring.shiro.version>1.6.0</spring.shiro.version>
+        <spring.shiro.version>1.8.0</spring.shiro.version>
     </properties>
 
     <dependencies>
@@ -27,12 +27,7 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>${spring.shiro.version}</version>
         </dependency>
     </dependencies>
 </project>
