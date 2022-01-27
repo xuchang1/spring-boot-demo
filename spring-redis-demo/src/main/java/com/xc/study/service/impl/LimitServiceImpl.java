@@ -42,6 +42,8 @@ public class LimitServiceImpl implements LimitService {
 			System.out.println(currentRequest);
 			// 超过阈值，禁止访问
 			if (currentRequest > limit) {
+				// 移除之前的数据
+				stringRedisTemplate.opsForZSet().removeRangeByScore(key, 0, currentTime - intervalTime);
 				return false;
 			}
 		}

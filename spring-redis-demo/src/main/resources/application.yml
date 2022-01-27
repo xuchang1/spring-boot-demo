@@ -2,5 +2,7 @@ server:
   port: 8801
 spring:
   redis:
-    host: localhost
+    host: 172.30.10.6
     port: 6379
+    password: 123456
+    database: 0
