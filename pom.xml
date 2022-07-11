@@ -12,6 +12,7 @@
         <module>springboot-demo</module>
         <module>shiro-demo</module>
         <module>mybatis-demo</module>
+        <module>byte-enhance</module>
     </modules>
 
     <parent>
