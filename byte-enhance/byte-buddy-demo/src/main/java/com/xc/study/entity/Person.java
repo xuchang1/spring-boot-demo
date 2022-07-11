@@ -30,8 +30,8 @@ public class Person {
         this.age = age;
     }
 
-    public String say() {
-        return name + ":" + age;
+    public String say(String str) {
+        return str + "-" + name + "-" + age;
     }
 
     @Override
