@@ -20,9 +20,14 @@ public class StudentAgent {
                 // 拦截的逻辑
                 .transform((builder, typeDescription, classLoader, module) ->
                         builder
+                                .method(named("say"))
+                                .intercept(Advice.to(StudentConsInterceptor.class))
                                 // 拦截 Student 类的所有构造函数，并通过 StudentConsInterceptor 执行拦截逻辑
                                 .constructor(ElementMatchers.any())
                                 .intercept(Advice.to(StudentConsInterceptor.class))
+
+                        //                    builder = builder.visit(Advice.to(CPoolEntryInterceptor.class).on(ElementMatchers.named("close")));
+                        //                    builder = builder.visit(Advice.to(CPoolEntryInterceptor.class).on(isConstructor()));
                 )
                 // 装载
                 .installOn(instrumentation);

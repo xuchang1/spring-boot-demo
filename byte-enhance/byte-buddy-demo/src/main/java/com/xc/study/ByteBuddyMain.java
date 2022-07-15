@@ -34,6 +34,7 @@ public class ByteBuddyMain {
         for (int i = 0; i < 3; i++) {
             Person person = new Person("xc" + i, i);
             Student student = new Student(person, "三年级1班");
+            student.say();
         }
     }
 }

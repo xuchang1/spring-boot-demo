@@ -26,4 +26,15 @@ public class Student {
     public void setClassName(String className) {
         this.className = className;
     }
+
+    public String say() {
+        return person.getName() + "-" + person.getAge() + "-" + className;
+    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "person=" + person +
+                ", className='" + className + '\'' +
+                '}';
+    }
 }
