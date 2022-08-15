@@ -1,0 +1,4 @@
+# ByteBuddySpringBootMain
+在springboot工程中，使用byte-buddy进行字节码增强。PersonAgentInit中通过@PostConstruct注解初始化字节码增强agent的调用。
+如果在调用之前，先初始化了增强的类（new了一个person对象），会发现增强失效。
+所以要基于springboot启动的生命周期，使得被增强的逻辑在增强类初始化之前加载。
