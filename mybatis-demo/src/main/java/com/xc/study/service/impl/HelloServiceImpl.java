@@ -17,4 +17,9 @@ public class HelloServiceImpl implements HelloService {
     public Person queryPersonById(Integer id) {
         return personMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public int deleteById(Integer id) {
+        return personMapper.deleteByPrimaryKey(id);
+    }
 }

@@ -18,4 +18,9 @@ public class HelloController {
     public Person queryPersonById(@RequestParam Integer id) {
         return helloService.queryPersonById(id);
     }
+
+    @GetMapping("deleteById")
+    public int deleteById(@RequestParam Integer id) {
+        return helloService.deleteById(id);
+    }
 }
