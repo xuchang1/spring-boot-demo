@@ -6,4 +6,8 @@
 
 # [FieldValidator](src/main/java/com/xc/study/config/FieldValidator.java), [FieldValidated](src/main/java/com/xc/study/annotation/FieldValidated.java)
     Realize parameter verification through custom annotations and enumeration classes.
-    通过自定义注解及枚举类的方式实现参数校验. @Validated, @Valid.
+    通过自定义注解及枚举类的方式实现参数校验.
+    @Validated, @Valid.
+
+# [启动类分析]()
+-javaagent:/Users/changxu/software/spring-startup-analyzer/lib/spring-profiler-agent.jar
