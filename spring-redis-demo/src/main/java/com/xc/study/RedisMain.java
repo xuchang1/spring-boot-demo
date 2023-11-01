@@ -2,6 +2,7 @@ package com.xc.study;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author changxu13
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RedisMain {
 	public static void main(String[] args) {
-		SpringApplication.run(RedisMain.class, args);
+		ConfigurableApplicationContext run = SpringApplication.run(RedisMain.class, args);
+		run.getBeanFactory();
 	}
 }

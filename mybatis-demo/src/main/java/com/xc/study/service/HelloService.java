@@ -11,4 +11,6 @@ public interface HelloService {
      * @return 用户信息
      */
     Person queryPersonById(Integer id);
+
+    int deleteById(Integer id);
 }
