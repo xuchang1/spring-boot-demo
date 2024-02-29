@@ -15,6 +15,7 @@
         <module>byte-enhance</module>
         <module>http-client-demo</module>
         <module>testng-demo</module>
+        <module>spring-sharding-demo</module>
     </modules>
 
     <parent>

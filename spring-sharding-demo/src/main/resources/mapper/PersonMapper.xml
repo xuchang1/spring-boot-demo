@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xc.study.mapper.PersonMapper">
+  <resultMap id="BaseResultMap" type="com.xc.study.entity.po.Person">
+    <!--@mbg.generated-->
+    <!--@Table person-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="sex" jdbcType="CHAR" property="sex" />
+    <result column="vaild_flag" jdbcType="VARCHAR" property="vaildFlag" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, "name", age, sex, vaild_flag, create_date
+  </sql>
+</mapper>
