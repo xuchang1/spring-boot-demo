@@ -16,6 +16,7 @@
         <module>http-client-demo</module>
         <module>testng-demo</module>
         <module>spring-sharding-demo</module>
+        <module>spring-boot-multi-datasource</module>
     </modules>
 
     <parent>
