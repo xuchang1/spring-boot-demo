@@ -19,9 +19,18 @@ public class HelloController {
         return new Person();
     }
 
+    @GetMapping("get1/get")
+    public Person get(){
+        return new Person();
+    }
+
+    @GetMapping("get2/get")
+    public Person get(){
+        return new Person();
+    }
+
     @GetMapping("start")
     public Person start(){
-        Mono<Person> mono = helloFeignClient.get();
-        return mono.block();
+        return helloFeignClient.get();
     }
 }
