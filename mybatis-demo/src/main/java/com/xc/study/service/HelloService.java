@@ -13,4 +13,6 @@ public interface HelloService {
     Person queryPersonById(Integer id);
 
     int deleteById(Integer id);
+
+    long batchSave(Integer size, Integer batchSize);
 }

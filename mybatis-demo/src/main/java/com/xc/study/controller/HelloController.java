@@ -23,4 +23,9 @@ public class HelloController {
     public int deleteById(@RequestParam Integer id) {
         return helloService.deleteById(id);
     }
+
+    @GetMapping("batchSave")
+    public long batchSave(@RequestParam Integer size, Integer batchSize) {
+        return helloService.batchSave(size, batchSize);
+    }
 }

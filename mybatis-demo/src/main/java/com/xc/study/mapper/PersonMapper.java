@@ -5,6 +5,8 @@ import com.xc.study.po.Person;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface PersonMapper {
     int deleteByPrimaryKey(Integer id);
@@ -18,4 +20,6 @@ public interface PersonMapper {
     int updateByPrimaryKeySelective(Person record);
 
     int updateByPrimaryKey(Person record);
+
+    void inserts(List<Person> list);
 }
